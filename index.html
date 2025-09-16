@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nithin - Portfolio</title>
+ <meta name="description" content="Developer portfolio highlighting modern web design, MERN stack projects, and interactive UI/UX solutions." />
+ <meta name="keywords" content="Portfolio website, Web developer portfolio, MERN stack developer, React.js developer, Tailwind CSS developer, Bootstrap 5, JavaScript developer, Responsive web design, UI/UX design, Hire web developer" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./index.js"></script>
+    
+
+ 
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <div class="profile-sides">
+                    <div class="profiles-container">
+                        <div class="profiles-ring"></div>
+                        <div class="profile-images" id="profileImages">N</div>
+                    </div>
+                </div>
+                <span class="ms-3 d-inline">NITHIN</span>
+            </a>
+
+            <!-- Pure CSS Mobile Toggle -->
+            <input type="checkbox" id="navbar-toggle" class="d-lg-none">
+            <label for="navbar-toggle" class="navbar-toggler d-lg-none">
+                <span class="navbar-toggler-icon"></span>
+            </label>
+
+            <!-- Navigation Menu -->
+            <div class="navbar-collapse">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tech">Tech Stack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Desktop Resume Button -->
+                <div class="d-none d-lg-block">
+                    <a href="./assets/resume.pdf" target="_blank" class="btn btn-outline-light">
+                        <i class="fas fa-download me-2"></i>Resume
+                    </a>
+                </div>
+
+                <!-- Mobile Resume Button -->
+                <div class="d-lg-none mobile-resume-btn">
+                    <a href="assets/resume.pdf" target="_blank" class="btn btn-outline-light">
+                        <i class="fas fa-download me-2"></i>Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+     
+  
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+            <div id="particles-js"></div>
+        <div class="container">
+        
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content slide-in-left">
+                      <h1>
+                        <div class="name-container">
+                            <span class="name-shadow">NITHIN</span>
+                            <span class="name-main">NITHIN</span>
+                        </div>
+                    </h1>
+                    <!-- <h1>Hi, I'm <span class="typing-text">NITHIN</span></h1> -->
+                    <!-- <p class="subtitle">Full Stack Developer</p> -->
+                     <div class="job-title">Full Stack Developer</div>
+                    <p class="lead mb-4">I create digital experiences that combine beautiful design with powerful functionality. Passionate about clean code and user-centered solutions.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#projects" class="btn btn-primary-gradient">View My Work</a>
+                        <a href="#contact" class="btn btn-outline-gradient">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center ">
+                    <div class="model-containers">
+  <img src="./images/home.png" alt="Product Display" class="home-img">
+  <div class="bottom-hex"></div>
+  <div class="stage-shadow"></div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+      <section id="about" class="about-section ">
+        <!-- Animated Background Particles -->
+        <div class="particles" id="particles"></div>
+        
+        <div class="container">
+            <div class="about-content">
+                <!-- Left Side - Interactive Profile -->
+                <div class="profile-side slide-in-right">
+                    <div class="profile-container">
+                        <div class="profile-ring"></div>
+                        <div class="profile-image" id="profileImage"></div>
+                        
+                        <!-- Floating Skills -->
+                        <div class="skill-bubble">React</div>
+                        <div class="skill-bubble">Node.js</div>
+                        <div class="skill-bubble">MongoDB</div>
+                        <div class="skill-bubble">JavaScript</div>
+                        <div class="skill-bubble">CSS3</div>
+                        <div class="skill-bubble">Express</div>
+                    </div>
+                </div>
+                 <!-- <div class="col-lg-6 text-center slide-in-right">
+                    <div class="model-container">
+                        <div class="model-glow"></div>
+                        <canvas id="bg" class="ai"></canvas>
+                    </div>
+                </div> -->
+                
+                <!-- Right Side - Content -->
+                <div class="content-side slide-in-left">
+                    <h2 class="section-title">About Me</h2>
+                    
+                    <p class="intro-text">
+                        Hi, I'm <span class="highlight">Nithin</span> — a passionate <span class="highlight">Full Stack Developer</span> who transforms ideas into responsive, scalable, and visually engaging digital solutions. With hands-on experience in the <span class="highlight">MERN stack</span>, I specialize in building full-featured web applications that are fast, secure, and user-friendly.
+                    </p>
+                    
+                    <p class="intro-text">
+                        I thrive on creating seamless user experiences by blending <span class="highlight">beautiful design</span> with <span class="highlight">clean, efficient code</span>. From dynamic product management and secure authentication to admin dashboards and interactive UIs, I focus on delivering real-world solutions that make an impact.
+                    </p>
+                    
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fab fa-js-square"></i>
+                            <div>JavaScript</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <div>React</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-node-js"></i>
+                            <div>Node.js</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <div>MongoDB</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <div>CSS3</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cloud"></i>
+                            <div>APIs</div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <!-- Experience Section -->
+ 
+<section id="experience" class="experience-section">
+  <div class="container">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="timeline">
+          <div class="timeline-line"></div>
+
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+              <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" alt="Node.js Icon" class="timeline-icon" />
+
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>Full Stack Developer</h4>
+                <span class="company">What's Next Infotech</span>
+                <span class="duration">2024 -2025</span>
+              </div>
+              <p>Designed and developed a scalable web application for baby products using the MERN stack, featuring secure authentication, dynamic product management with image uploads, wishlist and cart functionality, and a comprehensive admin dashboard.</p>
+              <div class="experience-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Tailwind css</span>
+                <span class="tech-tag">Html</span>
+                <span class="tech-tag">Css</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Hostinger</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>Python Full Stack Development Course</h4>
+                <span class="company">Uniq Technologies</span>
+                <span class="duration">2020 - 2022</span>
+              </div>
+              <p>Gained hands-on experience in Python, JavaScript, MySQL, Django, React, CSS,HTML, through various programming and development projects. Collaborated with peers to learn and implement modern web development technologies effectively.</p>
+              <div class="experience-tech">
+                <span class="tech-tag">Html</span>
+                <span class="tech-tag">Css</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">React</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <!-- <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h4>Web Developer</h4>
+                <span class="company">StartupHub</span>
+                <span class="duration">2018 - 2020</span>
+              </div>
+              <p>Built and maintained multiple client websites. Integrated third-party APIs and payment gateways. Implemented SEO best practices resulting in 150% increase in organic traffic.</p>
+              <div class="experience-tech">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">WordPress</span>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Tech Stack Section -->
+  <!-- Tech Stack Section -->
+    <section id="tech" class="tech-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Technologies I Work With</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 fade-in slide-in-left">
+                    <div class="tech-category">
+                        <div class="tech-category-header">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Frontend</h4>
+                        </div>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-js-square"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-sass"></i>
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-bootstrap"></i>
+                                <span>Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 fade-in">
+                    <div class="tech-category">
+                        <div class="tech-category-header">
+                            <i class="fas fa-server"></i>
+                            <h4>Backend</h4>
+                        </div>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <i class="fab fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-database"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-database"></i>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-code"></i>
+                                <span>Django</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 fade-in slide-in-right">
+                    <div class="tech-category">
+                        <div class="tech-category-header">
+                            <i class="fas fa-tools"></i>
+                            <h4>Tools</h4>
+                        </div>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <i class="fab fa-figma"></i>
+                                <span>Figma</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-server"></i>
+                                <span>Hostinger</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-code"></i>
+                                <span>VS Code</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
+                        <a href="https://techsolution34.netlify.app/" target="_blank" class="project_link text-decoration-none">
+                    <div class="project-card">
+                          <div class="project-image">
+                            <img src="./images/project1.png" alt="Task Management App" class="img-fluid rounded">
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title">Tech company website</h4>
+                            <p>A modern company website built with HTML, CSS, and JavaScript, styled using Bootstrap 5 for a clean layout.
+Enhanced with GSAP animations for smooth, engaging interactions.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Bootstrap5</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag"> GSAP ANIMATIONS</span>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
+                <a href="https://movietime34.netlify.app/" target="_blank" class="project_link text-decoration-none">
+
+                    <div class="project-card">
+                         <div class="project-image">
+                            <img src="./images/project2.png" alt="Task Management App" class="img-fluid rounded">
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title">Movie Time</h4>
+                            <p>A responsive single-page movie search app built with React.js and Tailwind CSS, featuring real-time search with debounce optimization.
+Integrated with an external API and Appwrite backend to fetch movies and save user favorites.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Appwrite backend</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">External API (TMDB)</span>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
+                                    <a href="https://task34.netlify.app/" target="_blank" class="project_link text-decoration-none">
+
+                    <div class="project-card">
+                          <div class="project-image">
+                            <img src="./images/project3.png" alt="Task Management App" class="img-fluid rounded">
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title">Task Management App</h4>
+                            <p>The TaskManager is a modern React app for managing daily tasks with add, edit, delete, and complete functionality.
+It supports search, filters (all, active, completed), and pagination with 5 tasks per page.
+Tasks are validated with a 50-word limit and saved in localStorage for persistence.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Tailwind css</span>
+                                <!-- <span class="tech-tag">Redux</span>
+                                <span class="tech-tag">Socket.io</span> -->
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title fade-in">Get In Touch</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="contact-form fade-in">
+          <p class="text-center mb-4">Ready to start your next project? Let's create something amazing together!</p>
+
+          <!-- Formspree form -->
+          <form id="contactForm" action="https://formspree.io/f/xvgppdyz" method="POST" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required aria-label="Your name">
+              </div>
+              <div class="col-md-6">
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required aria-label="Your email">
+              </div>
+              <div class="col-12">
+                <input type="text" name="subject" class="form-control" placeholder="Subject" aria-label="Subject">
+              </div>
+              <div class="col-12">
+                <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required aria-label="Your message"></textarea>
+              </div>
+
+              <!-- optional: include a hidden input to set the email subject visible in Formspree inbox -->
+              <input type="hidden" name="_subject" value="New message from portfolio contact form">
+
+              <div class="col-12 text-center">
+                <button type="submit" id="contactSubmit" class="btn btn-primary-gradient">Send Message</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- status message area -->
+          <div id="contactStatus" class="mt-3 text-center" role="status" aria-live="polite"></div>
+
+          <div class="social-links mt-4">
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- optional JS to submit via fetch and show success/error without redirect -->
+<script>
+  (function () {
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('contactStatus');
+    const submitBtn = document.getElementById('contactSubmit');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      status.textContent = '';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      const formData = new FormData(form);
+
+      try {
+        const resp = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (resp.ok) {
+          status.innerHTML = '<div class="alert alert-success">Thanks — your message has been sent!</div>';
+          form.reset();
+        } else {
+          const data = await resp.json();
+          let errMsg = 'Oops! There was a problem sending your message.';
+          if (data && data.errors) {
+            errMsg = data.errors.map(e => e.message).join(' ');
+          }
+          status.innerHTML = '<div class="alert alert-danger">' + errMsg + '</div>';
+        }
+      } catch (err) {
+        status.innerHTML = '<div class="alert alert-danger">Network error — please try again later.</div>';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  })();
+</script>
+
+
+   
+ 
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="./script.js"></script>
+<script src="./index.js"></script>
+
+
+
+<!-- GSAP CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+
+    <script>
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 120, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                shape: {
+                    type: 'circle',
+                    stroke: { width: 0, color: '#000000' }
+                },
+                opacity: {
+                    value: 0.4,
+                    random: false,
+                    anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#667eea',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 400, line_linked: { opacity: 1 } },
+                    bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+                    repulse: { distance: 100, duration: 0.4 },
+                    push: { particles_nb: 4 },
+                    remove: { particles_nb: 2 }
+                }
+            },
+            retina_detect: true
+        });
+
+     
+    </script>
+    <!-- <script>
+        // Simple 3D scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, 400/500, 0.1, 1000);
+        const canvas = document.getElementById('bg');
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        
+        renderer.setSize(400, 500);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        
+        // Create a rotating cube
+        const geometry = new THREE.BoxGeometry(2, 2, 2);
+        const material = new THREE.MeshBasicMaterial({ 
+            color: 0x667eea,
+            wireframe: true 
+        });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+        
+        // Add some particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 100;
+        const positions = new Float32Array(particlesCount * 3);
+        
+        for (let i = 0; i < particlesCount * 3; i++) {
+            positions[i] = (Math.random() - 0.5) * 10;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particlesMaterial = new THREE.PointsMaterial({ 
+            color: 0x764ba2,
+            size: 0.02 
+        });
+        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+        
+        camera.position.z = 5;
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            cube.rotation.x += 0.005;
+            cube.rotation.y += 0.005;
+            
+            particles.rotation.y += 0.001;
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // Model container scroll positioning
+        const modelContainer = document.getElementById('modelContainer');
+        const aboutSection = document.getElementById('about');
+        
+        function updateModelPosition() {
+            const aboutTop = aboutSection.offsetTop;
+            const aboutHeight = aboutSection.offsetHeight;
+            const scrollTop = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+            
+            // Check if about section is in viewport
+            if (scrollTop + windowHeight > aboutTop && scrollTop < aboutTop + aboutHeight) {
+                modelContainer.classList.add('move-left');
+            } else {
+                modelContainer.classList.remove('move-left');
+            }
+        }
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', updateModelPosition);
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Active navigation link update
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Responsive canvas
+        function resizeCanvas() {
+            const container = document.querySelector('.model-container');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height);
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            this.reset();
+        });
+</script> -->
+
+   <script>
+       // Mouse trail effect
+        let mouseTrail = [];
+        document.addEventListener('mousemove', (e) => {
+            mouseTrail.push({
+                x: e.clientX,
+                y: e.clientY,
+                time: Date.now()
+            });
+            
+            // Limit trail length
+            if (mouseTrail.length > 10) {
+                mouseTrail.shift();
+            }
+            
+            // Create trail elements
+            mouseTrail.forEach((point, index) => {
+                if (index > 0) {
+                    const trail = document.createElement('div');
+                    trail.style.position = 'fixed';
+                    trail.style.left = point.x + 'px';
+                    trail.style.top = point.y + 'px';
+                    trail.style.width = '3px';
+                    trail.style.height = '3px';
+                    trail.style.background = '#FFFF';
+                    trail.style.borderRadius = '50%';
+                    trail.style.pointerEvents = 'none';
+                    trail.style.zIndex = '1000';
+                    trail.style.opacity = (index / mouseTrail.length) * 0.5;
+                    
+                    document.body.appendChild(trail);
+                    
+                    setTimeout(() => {
+                        if (trail.parentNode) {
+                            trail.parentNode.removeChild(trail);
+                        }
+                    }, 100);
+                }
+            });
+        });
+   </script>
+</body>
+</html>
