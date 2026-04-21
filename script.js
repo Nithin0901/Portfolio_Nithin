@@ -129,24 +129,11 @@
             });
         });
 
-        // Add hover effects to project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) rotateX(5deg)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) rotateX(0)';
-            });
-        });
-   
 
-        
-// <!-- GSAP CDN -->
-
+// GSAP and section-specific interactions
+if (window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Animate the vertical timeline line
   gsap.to(".timeline-line", {
     scrollTrigger: {
       trigger: ".timeline",
@@ -158,147 +145,156 @@
     ease: "none",
   });
 
-  // Animate each card and its dot
   gsap.utils.toArray(".timeline-item").forEach((item, i) => {
     const content = item.querySelector(".timeline-content");
     const dot = item.querySelector(".timeline-dot");
 
-    gsap.fromTo(content,
+    gsap.fromTo(
+      content,
       { y: 100, opacity: 0 },
       {
         scrollTrigger: {
           trigger: item,
           start: "top 85%",
-          toggleActions: "play none none reverse"
+          toggleActions: "play none none reverse",
         },
         y: 0,
         opacity: 1,
         duration: 1.2,
         ease: "power3.out",
-        delay: i * 0.1
-      });
+        delay: i * 0.1,
+      }
+    );
 
     gsap.to(dot, {
       scrollTrigger: {
         trigger: item,
         start: "top 85%",
-        toggleActions: "play none none none"
+        toggleActions: "play none none none",
       },
       scale: 1,
       duration: 0.4,
       ease: "back.out(1.7)",
-      delay: 0.2
+      delay: 0.2,
     });
   });
 
+  gsap.from(".skill-orb-card", {
+    opacity: 0,
+    y: 24,
+    stagger: 0.08,
+    duration: 0.7,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".skills-showcase-grid",
+      start: "top 82%",
+      once: true,
+    },
+  });
 
-// Initialize Particles.js
-particlesJS("particles-js", {
-    "particles": {
-        "number": {
-            "value": 80,
-            "density": {
-                "enable": true,
-                "value_area": 800
-            }
-        },
-        "color": {
-            "value": "#FF6B35"
-        },
-        "shape": {
-            "type": "circle",
-            "stroke": {
-                "width": 0,
-                "color": "#000000"
-            },
-            "polygon": {
-                "nb_sides": 5
-            }
-        },
-        "opacity": {
-            "value": 0.3,
-            "random": true,
-            "anim": {
-                "enable": false,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
-            }
-        },
-        "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-                "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
-                "sync": false
-            }
-        },
-        "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#FF6B35",
-            "opacity": 0.2,
-            "width": 1
-        },
-        "move": {
-            "enable": true,
-            "speed": 2,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 1200
-            }
-        }
+  gsap.from(".innovative-card", {
+    opacity: 0,
+    y: 30,
+    stagger: 0.14,
+    duration: 0.8,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".project-grid",
+      start: "top 82%",
+      once: true,
     },
-    "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-            "onhover": {
-                "enable": true,
-                "mode": "grab"
-            },
-            "onclick": {
-                "enable": true,
-                "mode": "push"
-            },
-            "resize": true
-        },
-        "modes": {
-            "grab": {
-                "distance": 140,
-                "line_linked": {
-                    "opacity": 0.5
-                }
-            },
-            "bubble": {
-                "distance": 400,
-                "size": 40,
-                "duration": 2,
-                "opacity": 8,
-                "speed": 3
-            },
-            "repulse": {
-                "distance": 200,
-                "duration": 0.4
-            },
-            "push": {
-                "particles_nb": 4
-            },
-            "remove": {
-                "particles_nb": 2
-            }
-        }
-    },
-    "retina_detect": true
+  });
+}
+
+const projectFilterButtons = document.querySelectorAll('.project-filter-btn');
+const projectCards = document.querySelectorAll('.project-grid .project-card');
+
+projectFilterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+
+    projectFilterButtons.forEach((btn) => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    projectCards.forEach((card) => {
+      const categories = (card.dataset.category || '').split(' ');
+      const isVisible = filter === 'all' || categories.includes(filter);
+      card.classList.toggle('is-hidden', !isVisible);
+    });
+  });
 });
-  
 
+const metricObserver = new IntersectionObserver((entries, obs) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
 
-  
+    const counter = entry.target;
+    const target = Number(counter.dataset.target || 0);
+    const duration = 1000;
+    const start = performance.now();
+
+    const tick = (time) => {
+      const progress = Math.min((time - start) / duration, 1);
+      counter.textContent = Math.floor(progress * target).toString();
+      if (progress < 1) requestAnimationFrame(tick);
+      else counter.textContent = target.toString();
+    };
+
+    requestAnimationFrame(tick);
+    obs.unobserve(counter);
+  });
+}, { threshold: 0.35 });
+
+document.querySelectorAll('.metric-number').forEach((counter) => metricObserver.observe(counter));
+
+const modal = document.querySelector('.project-preview-modal');
+const modalImage = document.querySelector('.project-preview-image');
+const modalTitle = document.querySelector('.project-preview-title');
+const modalDescription = document.querySelector('.project-preview-description');
+const modalClose = document.querySelector('.project-preview-close');
+
+if (modal && modalImage && modalTitle && modalDescription && modalClose) {
+  document.querySelectorAll('.project-preview-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.project-card');
+      if (!card) return;
+
+      modalImage.src = card.dataset.preview || '';
+      modalTitle.textContent = card.dataset.title || 'Project Preview';
+      modalDescription.textContent = card.dataset.desc || '';
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  const closeModal = () => {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+}
+
+let rafId = null;
+const updateParallaxCards = () => {
+  const scrollY = window.scrollY || window.pageYOffset;
+  projectCards.forEach((card, index) => {
+    const shift = Math.sin((scrollY + index * 45) * 0.0025) * 4;
+    if (!card.classList.contains('is-hidden')) {
+      card.style.setProperty('--parallax-shift', `${shift}px`);
+    }
+  });
+  rafId = null;
+};
+
+window.addEventListener('scroll', () => {
+  if (!rafId) rafId = requestAnimationFrame(updateParallaxCards);
+}, { passive: true });
