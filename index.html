@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <script type="module" src="./index.js"></script>
     
 
  
@@ -384,76 +383,114 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
-        <div class="container">
-            <h2 class="section-title fade-in">Featured Projects</h2>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
-                        <a href="https://techsolution34.netlify.app/" target="_blank" class="project_link text-decoration-none">
-                    <div class="project-card">
-                          <div class="project-image">
-                            <img src="./images/project1.png" alt="Task Management App" class="img-fluid rounded">
-                        </div>
-                        <div class="project-content">
+        <div class="container projects-shell">
+            <h2 class="section-title fade-in">Innovative <span>Project Lab</span></h2>
+            <p class="projects-subtitle fade-in">Immersive builds with measurable impact, crafted for modern product teams.</p>
+
+            <div class="project-filters fade-in" role="tablist" aria-label="Filter projects">
+                <button class="project-filter is-active" data-filter="all" aria-pressed="true">All</button>
+                <button class="project-filter" data-filter="frontend" aria-pressed="false">Frontend</button>
+                <button class="project-filter" data-filter="fullstack" aria-pressed="false">Full Stack</button>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card project-card--large fade-in" data-category="frontend" data-project="Tech company website" data-image="./images/project1.png">
+                    <div class="project-orb"></div>
+                    <div class="project-image">
+                        <img src="./images/project1.png" alt="Tech company website preview" class="img-fluid rounded">
+                        <div class="project-badge">Featured</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
                             <h4 class="project-title">Tech company website</h4>
-                            <p>A modern company website built with HTML, CSS, and JavaScript, styled using Bootstrap 5 for a clean layout.
-Enhanced with GSAP animations for smooth, engaging interactions.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">Bootstrap5</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag"> GSAP ANIMATIONS</span>
-                            </div>
+                            <span class="project-progress">UX polish <strong>96%</strong></span>
+                        </div>
+                        <p>A modern company website built with HTML, CSS, and JavaScript, styled with Bootstrap and elevated by GSAP-powered motion.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Bootstrap5</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GSAP</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div><span class="metric-number" data-target="32">0</span><small>UI Sections</small></div>
+                            <div><span class="metric-number" data-target="89">0</span><small>Lighthouse</small></div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://techsolution34.netlify.app/" target="_blank" class="project-btn">Live</a>
+                            <button type="button" class="project-btn project-btn--ghost project-preview-btn">Preview</button>
                         </div>
                     </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
-                <a href="https://movietime34.netlify.app/" target="_blank" class="project_link text-decoration-none">
+                </article>
 
-                    <div class="project-card">
-                         <div class="project-image">
-                            <img src="./images/project2.png" alt="Task Management App" class="img-fluid rounded">
-                        </div>
-                        <div class="project-content">
+                <article class="project-card fade-in" data-category="fullstack" data-project="Movie Time" data-image="./images/project2.png">
+                    <div class="project-orb"></div>
+                    <div class="project-image">
+                        <img src="./images/project2.png" alt="Movie Time preview" class="img-fluid rounded">
+                        <div class="project-badge">Trending</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
                             <h4 class="project-title">Movie Time</h4>
-                            <p>A responsive single-page movie search app built with React.js and Tailwind CSS, featuring real-time search with debounce optimization.
-Integrated with an external API and Appwrite backend to fetch movies and save user favorites.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">React.js</span>
-                                <span class="tech-tag">Appwrite backend</span>
-                                <span class="tech-tag">Tailwind CSS</span>
-                                <span class="tech-tag">External API (TMDB)</span>
-                            </div>
+                            <span class="project-progress">Engagement <strong>91%</strong></span>
+                        </div>
+                        <p>Responsive movie search app with debounce, TMDB integrations, and Appwrite-backed favorites.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Appwrite</span>
+                            <span class="tech-tag">TMDB API</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div><span class="metric-number" data-target="4">0</span><small>Core Flows</small></div>
+                            <div><span class="metric-number" data-target="78">0</span><small>Saved Fav</small></div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://movietime34.netlify.app/" target="_blank" class="project-btn">Live</a>
+                            <button type="button" class="project-btn project-btn--ghost project-preview-btn">Preview</button>
                         </div>
                     </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
-                                    <a href="https://task34.netlify.app/" target="_blank" class="project_link text-decoration-none">
+                </article>
 
-                    <div class="project-card">
-                          <div class="project-image">
-                            <img src="./images/project3.png" alt="Task Management App" class="img-fluid rounded">
-                        </div>
-                        <div class="project-content">
+                <article class="project-card fade-in" data-category="frontend" data-project="Task Management App" data-image="./images/project3.png">
+                    <div class="project-orb"></div>
+                    <div class="project-image">
+                        <img src="./images/project3.png" alt="Task Management App preview" class="img-fluid rounded">
+                        <div class="project-badge">Smart UX</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
                             <h4 class="project-title">Task Management App</h4>
-                            <p>The TaskManager is a modern React app for managing daily tasks with add, edit, delete, and complete functionality.
-It supports search, filters (all, active, completed), and pagination with 5 tasks per page.
-Tasks are validated with a 50-word limit and saved in localStorage for persistence.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">React.js</span>
-                                <span class="tech-tag">Tailwind css</span>
-                                <!-- <span class="tech-tag">Redux</span>
-                                <span class="tech-tag">Socket.io</span> -->
-                            </div>
+                            <span class="project-progress">Completion <strong>94%</strong></span>
+                        </div>
+                        <p>Task workflow app with add/edit/delete/search/filter and localStorage persistence in a focused interface.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">LocalStorage</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div><span class="metric-number" data-target="5">0</span><small>Task Views</small></div>
+                            <div><span class="metric-number" data-target="50">0</span><small>Word Limit</small></div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://task34.netlify.app/" target="_blank" class="project-btn">Live</a>
+                            <button type="button" class="project-btn project-btn--ghost project-preview-btn">Preview</button>
                         </div>
                     </div>
-                    </a>
-                </div>
+                </article>
             </div>
         </div>
     </section>
+
+    <div class="project-preview-modal" id="projectPreviewModal" aria-hidden="true">
+        <div class="project-preview-card">
+            <button type="button" class="project-preview-close" aria-label="Close preview">&times;</button>
+            <img id="projectPreviewImage" src="" alt="Project preview image">
+            <h3 id="projectPreviewTitle"></h3>
+        </div>
+    </div>
 
    <!-- Contact Section -->
 <section id="contact" class="contact-section">
@@ -558,16 +595,14 @@ Tasks are validated with a 50-word limit and saved in localStorage for persisten
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="./script.js"></script>
-<script src="./index.js"></script>
-
-
-
 <!-- GSAP CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script src="./script.js"></script>
+<script src="./index.js"></script>
+<script src="./projects.js"></script>
 
 
     <script>
