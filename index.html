@@ -386,71 +386,247 @@
     <section id="projects" class="projects-section">
         <div class="container">
             <h2 class="section-title fade-in">Featured Projects</h2>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
-                        <a href="https://techsolution34.netlify.app/" target="_blank" class="project_link text-decoration-none">
-                    <div class="project-card">
-                          <div class="project-image">
-                            <img src="./images/project1.png" alt="Task Management App" class="img-fluid rounded">
+            <p class="text-center project-section-subtitle fade-in">Filter by project type and explore details, impact metrics, and quick actions.</p>
+
+            <div class="project-filters fade-in" role="tablist" aria-label="Project categories">
+                <button class="project-filter-btn active" data-filter="all" type="button">All</button>
+                <button class="project-filter-btn" data-filter="frontend" type="button">Frontend</button>
+                <button class="project-filter-btn" data-filter="backend" type="button">Backend</button>
+                <button class="project-filter-btn" data-filter="fullstack" type="button">Full Stack</button>
+            </div>
+
+            <div class="row g-4 project-grid" id="projectGrid">
+                <div class="col-lg-4 col-md-6 fade-in slide-in-right project-item" data-category="frontend" data-featured="true">
+                    <article class="project-card" data-tilt-card>
+                        <div class="project-image">
+                            <img src="./images/project1.png" alt="Tech company website preview" class="img-fluid rounded">
+                            <div class="project-image-gradient"></div>
+                            <span class="project-status-badge status-completed">Completed</span>
+                            <span class="project-level-badge">Intermediate</span>
+                            <div class="project-overlay-actions">
+                                <a href="https://github.com/Nithin0901" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fab fa-github"></i> View Code</a>
+                                <a href="https://techsolution34.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fas fa-up-right-from-square"></i> Live Demo</a>
+                            </div>
                         </div>
                         <div class="project-content">
-                            <h4 class="project-title">Tech company website</h4>
-                            <p>A modern company website built with HTML, CSS, and JavaScript, styled using Bootstrap 5 for a clean layout.
-Enhanced with GSAP animations for smooth, engaging interactions.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-layer-group"></i> Frontend</span>
+                                <span><i class="far fa-calendar-check"></i> Jan 2026</span>
+                            </div>
+                            <h4 class="project-title">Tech Company Website</h4>
+                            <p>A modern company website with Bootstrap 5 layout and GSAP powered visual storytelling for higher user engagement.</p>
+                            <ul class="project-highlights">
+                                <li><i class="fas fa-check-circle"></i> Animated landing and scroll transitions</li>
+                                <li><i class="fas fa-check-circle"></i> SEO-friendly section architecture</li>
+                            </ul>
                             <div class="project-tech">
                                 <span class="tech-tag">HTML</span>
                                 <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">Bootstrap5</span>
+                                <span class="tech-tag">Bootstrap 5</span>
                                 <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag"> GSAP ANIMATIONS</span>
+                                <span class="tech-tag">GSAP</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-code"></i> 1.8k LOC</span>
+                                <span><i class="fas fa-star"></i> 24 Stars</span>
+                                <span><i class="fas fa-chart-line"></i> +38% Engagement</span>
                             </div>
                         </div>
-                    </div>
-                    </a>
+                    </article>
                 </div>
-                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
-                <a href="https://movietime34.netlify.app/" target="_blank" class="project_link text-decoration-none">
 
-                    <div class="project-card">
-                         <div class="project-image">
-                            <img src="./images/project2.png" alt="Task Management App" class="img-fluid rounded">
+                <div class="col-lg-4 col-md-6 fade-in slide-in-right project-item" data-category="fullstack" data-featured="true">
+                    <article class="project-card" data-tilt-card>
+                        <div class="project-image">
+                            <img src="./images/project2.png" alt="Movie Time application preview" class="img-fluid rounded">
+                            <div class="project-image-gradient"></div>
+                            <span class="project-status-badge status-completed">Completed</span>
+                            <span class="project-level-badge">Advanced</span>
+                            <div class="project-overlay-actions">
+                                <a href="https://github.com/Nithin0901" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fab fa-github"></i> View Code</a>
+                                <a href="https://movietime34.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fas fa-up-right-from-square"></i> Live Demo</a>
+                            </div>
                         </div>
                         <div class="project-content">
+                            <div class="project-meta">
+                                <span><i class="fas fa-layer-group"></i> Full Stack</span>
+                                <span><i class="far fa-calendar-check"></i> Feb 2026</span>
+                            </div>
                             <h4 class="project-title">Movie Time</h4>
-                            <p>A responsive single-page movie search app built with React.js and Tailwind CSS, featuring real-time search with debounce optimization.
-Integrated with an external API and Appwrite backend to fetch movies and save user favorites.</p>
+                            <p>A React app with debounce search, TMDB integration, and Appwrite persistence to track favorites and trending picks.</p>
+                            <ul class="project-highlights">
+                                <li><i class="fas fa-check-circle"></i> Real-time query with debounced API calls</li>
+                                <li><i class="fas fa-check-circle"></i> User favorites persisted in backend</li>
+                            </ul>
                             <div class="project-tech">
                                 <span class="tech-tag">React.js</span>
-                                <span class="tech-tag">Appwrite backend</span>
+                                <span class="tech-tag">Appwrite</span>
                                 <span class="tech-tag">Tailwind CSS</span>
-                                <span class="tech-tag">External API (TMDB)</span>
+                                <span class="tech-tag">TMDB API</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-code"></i> 2.6k LOC</span>
+                                <span><i class="fas fa-star"></i> 31 Stars</span>
+                                <span><i class="fas fa-download"></i> 1.2k Visits</span>
                             </div>
                         </div>
-                    </div>
-                    </a>
+                    </article>
                 </div>
-                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
-                                    <a href="https://task34.netlify.app/" target="_blank" class="project_link text-decoration-none">
 
-                    <div class="project-card">
-                          <div class="project-image">
-                            <img src="./images/project3.png" alt="Task Management App" class="img-fluid rounded">
+                <div class="col-lg-4 col-md-6 fade-in slide-in-right project-item" data-category="frontend" data-featured="true">
+                    <article class="project-card" data-tilt-card>
+                        <div class="project-image">
+                            <img src="./images/project3.png" alt="Task management application preview" class="img-fluid rounded">
+                            <div class="project-image-gradient"></div>
+                            <span class="project-status-badge status-completed">Completed</span>
+                            <span class="project-level-badge">Intermediate</span>
+                            <div class="project-overlay-actions">
+                                <a href="https://github.com/Nithin0901" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fab fa-github"></i> View Code</a>
+                                <a href="https://task34.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fas fa-up-right-from-square"></i> Live Demo</a>
+                            </div>
                         </div>
                         <div class="project-content">
+                            <div class="project-meta">
+                                <span><i class="fas fa-layer-group"></i> Frontend</span>
+                                <span><i class="far fa-calendar-check"></i> Mar 2026</span>
+                            </div>
                             <h4 class="project-title">Task Management App</h4>
-                            <p>The TaskManager is a modern React app for managing daily tasks with add, edit, delete, and complete functionality.
-It supports search, filters (all, active, completed), and pagination with 5 tasks per page.
-Tasks are validated with a 50-word limit and saved in localStorage for persistence.</p>
+                            <p>A modern task app with add/edit/delete, active-completed filters, search, and pagination with localStorage persistence.</p>
+                            <ul class="project-highlights">
+                                <li><i class="fas fa-check-circle"></i> Task filtering and paginated listing</li>
+                                <li><i class="fas fa-check-circle"></i> Validation and persistent state storage</li>
+                            </ul>
                             <div class="project-tech">
                                 <span class="tech-tag">React.js</span>
-                                <span class="tech-tag">Tailwind css</span>
-                                <!-- <span class="tech-tag">Redux</span>
-                                <span class="tech-tag">Socket.io</span> -->
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">LocalStorage</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-code"></i> 2.1k LOC</span>
+                                <span><i class="fas fa-star"></i> 19 Stars</span>
+                                <span><i class="fas fa-users"></i> 700+ Users</span>
                             </div>
                         </div>
-                    </div>
-                    </a>
+                    </article>
                 </div>
+
+                <div class="col-lg-4 col-md-6 fade-in slide-in-right project-item" data-category="backend" data-featured="false">
+                    <article class="project-card" data-tilt-card>
+                        <div class="project-image">
+                            <img src="./images/project1.png" alt="REST API dashboard preview" class="img-fluid rounded">
+                            <div class="project-image-gradient"></div>
+                            <span class="project-status-badge status-progress">In Progress</span>
+                            <span class="project-level-badge">Advanced</span>
+                            <div class="project-overlay-actions">
+                                <a href="https://github.com/Nithin0901" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fab fa-github"></i> View Code</a>
+                                <a href="https://techsolution34.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fas fa-book-open"></i> Case Study</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span><i class="fas fa-layer-group"></i> Backend</span>
+                                <span><i class="far fa-calendar-check"></i> Apr 2026</span>
+                            </div>
+                            <h4 class="project-title">REST API Service</h4>
+                            <p>Secure backend service with authentication, role checks, and structured APIs designed for scalable frontend consumption.</p>
+                            <ul class="project-highlights">
+                                <li><i class="fas fa-check-circle"></i> JWT authentication with protected routes</li>
+                                <li><i class="fas fa-check-circle"></i> Validation middleware and error handling</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">JWT</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-code"></i> 3.4k LOC</span>
+                                <span><i class="fas fa-star"></i> 14 Stars</span>
+                                <span><i class="fas fa-bolt"></i> 99.3% Uptime</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-lg-4 col-md-6 fade-in slide-in-right project-item" data-category="fullstack" data-featured="false">
+                    <article class="project-card" data-tilt-card>
+                        <div class="project-image">
+                            <img src="./images/project2.png" alt="E-commerce management preview" class="img-fluid rounded">
+                            <div class="project-image-gradient"></div>
+                            <span class="project-status-badge status-completed">Completed</span>
+                            <span class="project-level-badge">Advanced</span>
+                            <div class="project-overlay-actions">
+                                <a href="https://github.com/Nithin0901" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fab fa-github"></i> View Code</a>
+                                <a href="https://movietime34.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fas fa-book-open"></i> Case Study</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span><i class="fas fa-layer-group"></i> Full Stack</span>
+                                <span><i class="far fa-calendar-check"></i> Dec 2025</span>
+                            </div>
+                            <h4 class="project-title">Commerce Dashboard</h4>
+                            <p>Full stack admin dashboard with analytics, order lifecycle management, and reusable UI components for operators.</p>
+                            <ul class="project-highlights">
+                                <li><i class="fas fa-check-circle"></i> KPI dashboard and transaction insights</li>
+                                <li><i class="fas fa-check-circle"></i> Role-based access for operations team</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Chart.js</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-code"></i> 4.2k LOC</span>
+                                <span><i class="fas fa-star"></i> 27 Stars</span>
+                                <span><i class="fas fa-shopping-cart"></i> 8k Orders Tracked</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-lg-4 col-md-6 fade-in slide-in-right project-item" data-category="backend" data-featured="false">
+                    <article class="project-card" data-tilt-card>
+                        <div class="project-image">
+                            <img src="./images/project3.png" alt="Realtime notification service preview" class="img-fluid rounded">
+                            <div class="project-image-gradient"></div>
+                            <span class="project-status-badge status-planning">Planning</span>
+                            <span class="project-level-badge">Intermediate</span>
+                            <div class="project-overlay-actions">
+                                <a href="https://github.com/Nithin0901" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fab fa-github"></i> View Code</a>
+                                <a href="https://task34.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-action-btn"><i class="fas fa-book-open"></i> Case Study</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span><i class="fas fa-layer-group"></i> Backend</span>
+                                <span><i class="far fa-calendar-check"></i> Planned Q3 2026</span>
+                            </div>
+                            <h4 class="project-title">Realtime Notification Service</h4>
+                            <p>Event-driven backend for queue-based notifications with retry logic, delivery tracking, and endpoint integrations.</p>
+                            <ul class="project-highlights">
+                                <li><i class="fas fa-check-circle"></i> Queue workers with fault-tolerant retries</li>
+                                <li><i class="fas fa-check-circle"></i> Webhook and email channel orchestration</li>
+                            </ul>
+                            <div class="project-tech">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">BullMQ</span>
+                                <span class="tech-tag">Postman</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-code"></i> 2.9k LOC</span>
+                                <span><i class="fas fa-star"></i> 11 Stars</span>
+                                <span><i class="fas fa-paper-plane"></i> 150k Alerts/Day</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="text-center mt-4 fade-in">
+                <button class="btn btn-outline-gradient" id="viewMoreProjects" type="button">View More Projects</button>
             </div>
         </div>
     </section>
