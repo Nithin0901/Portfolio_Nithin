@@ -129,16 +129,83 @@
             });
         });
 
-        // Add hover effects to project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) rotateX(5deg)';
+        // Add 3D tilt effects, filtering, and progressive reveal for project cards
+        const projectCards = document.querySelectorAll('.project-card[data-tilt-card]');
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion) {
+            projectCards.forEach((card) => {
+                card.addEventListener('mousemove', (event) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = event.clientX - rect.left;
+                    const y = event.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((centerY - y) / centerY) * 6;
+                    const rotateY = ((x - centerX) / centerX) * 6;
+                    card.style.transform = `translateY(-10px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
             });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) rotateX(0)';
+        }
+
+        const filterButtons = document.querySelectorAll('.project-filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+        const viewMoreButton = document.getElementById('viewMoreProjects');
+        let showAllProjects = false;
+
+        const updateProjectCards = () => {
+            let hiddenCount = 0;
+            const selectedFilter = document.querySelector('.project-filter-btn.active')?.dataset.filter || 'all';
+
+            projectItems.forEach((item) => {
+                const category = item.dataset.category;
+                const isFeatured = item.dataset.featured === 'true';
+                const matchesFilter = selectedFilter === 'all' || category === selectedFilter;
+                const shouldShow = matchesFilter && (selectedFilter !== 'all' || showAllProjects || isFeatured);
+
+                item.classList.toggle('project-hidden', !shouldShow);
+
+                if (selectedFilter === 'all' && matchesFilter && !isFeatured && !showAllProjects) {
+                    hiddenCount++;
+                }
+            });
+
+            if (viewMoreButton) {
+                if (selectedFilter !== 'all') {
+                    viewMoreButton.style.display = 'none';
+                } else if (hiddenCount > 0) {
+                    viewMoreButton.style.display = 'inline-flex';
+                    viewMoreButton.textContent = 'View More Projects';
+                } else if (showAllProjects) {
+                    viewMoreButton.style.display = 'inline-flex';
+                    viewMoreButton.textContent = 'Show Less';
+                } else {
+                    viewMoreButton.style.display = 'none';
+                }
+            }
+        };
+
+        filterButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach((btn) => btn.classList.remove('active'));
+                button.classList.add('active');
+                showAllProjects = false;
+                updateProjectCards();
             });
         });
+
+        if (viewMoreButton) {
+            viewMoreButton.addEventListener('click', () => {
+                showAllProjects = !showAllProjects;
+                updateProjectCards();
+            });
+        }
+
+        updateProjectCards();
    
 
         
