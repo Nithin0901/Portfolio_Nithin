@@ -129,16 +129,7 @@
             });
         });
 
-        // Add hover effects to project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) rotateX(5deg)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) rotateX(0)';
-            });
-        });
+        // Hover effects removed – project cards are now controlled by GSAP ScrollTrigger
    
 
         
@@ -300,5 +291,67 @@ particlesJS("particles-js", {
 });
   
 
+// Horizontal scroll coverflow animation for the projects section
+(function () {
+    var wrapper = document.querySelector('.horiz-gallery-wrapper');
+    if (!wrapper) return;
 
+    var strip = wrapper.querySelector('.horiz-gallery-strip');
+    var cards = wrapper.querySelectorAll('.project-card');
+
+    // Set initial 3D state for each card
+    gsap.set(cards, {
+        rotateY: -15,
+        scale: 0.9,
+        opacity: 0.6
+    });
+
+    var pinWrapWidth;
+    var horizontalScrollLength;
+
+    function refresh() {
+        pinWrapWidth = strip.scrollWidth;
+        horizontalScrollLength = pinWrapWidth - window.innerWidth;
+    }
+
+    refresh();
+
+    // Pin the section and scroll the strip horizontally
+    var scrollTween = gsap.to(strip, {
+        x: function () { return -horizontalScrollLength; },
+        ease: 'none',
+        scrollTrigger: {
+            trigger: wrapper,
+            pin: wrapper,
+            scrub: 1,
+            start: 'center center',
+            end: function () { return '+=' + pinWrapWidth; },
+            invalidateOnRefresh: true
+        }
+    });
+
+    // Animate each card as it passes through the viewport centre
+    cards.forEach(function (card) {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: card,
+                containerAnimation: scrollTween,
+                start: 'center 65%',
+                end: 'center 35%',
+                scrub: true,
+                onEnter: function () { card.classList.add('active-card'); },
+                onLeave: function () { card.classList.remove('active-card'); },
+                onEnterBack: function () { card.classList.add('active-card'); },
+                onLeaveBack: function () { card.classList.remove('active-card'); }
+            }
+        }).to(card, {
+            rotateY: 0,
+            scale: 1.08,
+            opacity: 1,
+            ease: 'power2.inOut'
+        });
+    });
+
+    ScrollTrigger.addEventListener('refreshInit', refresh);
+}());
   

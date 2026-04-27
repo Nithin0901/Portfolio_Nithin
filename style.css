@@ -1430,22 +1430,61 @@
 
         /* Projects */
         .projects-section {
-            padding: 100px 0;
+            padding: 60px 0 0;
+            overflow: visible;
         }
 
-        .project-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-light);
-            border-radius: 15px;
+        .projects-heading {
+            padding-bottom: 2rem;
+        }
+
+        /* Grid background for the projects section */
+        .grid-background {
+            background-color: #0d0d1a;
+            background-image:
+                linear-gradient(to right, rgba(102, 126, 234, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(102, 126, 234, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* 3D perspective wrapper */
+        .horiz-gallery-wrapper {
+            perspective: 1200px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            height: 100%;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px var(--shadow-primary);
+        /* Horizontally scrolling strip */
+        .horiz-gallery-strip {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            will-change: transform;
+            padding: 3rem 10vw;
+        }
+
+        /* Individual card wrapper */
+        .project-wrap {
+            width: 380px;
+            flex-shrink: 0;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        /* 3D Card base styling */
+        .project-card {
+            background: rgba(17, 34, 64, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 460px;
+            transform-style: preserve-3d;
+            transform: rotateY(-15deg) scale(0.9);
+            opacity: 0.6;
+            box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.4);
+            will-change: transform, opacity;
+            transition: box-shadow 0.3s ease;
         }
 
         .project-image {
@@ -1453,6 +1492,13 @@
             background: var(--primary-gradient);
             position: relative;
             overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .project-image::before {
@@ -1464,19 +1510,72 @@
             bottom: 0;
             background: var(--profile-glow);
         }
+
         .project_link {
             color: white;
         }
 
         .project-content {
-            padding: 1.5rem;
+            padding: 1.2rem 1.5rem 0.5rem;
+            flex: 1;
+        }
+
+        .card-subtitle {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(228, 230, 234, 0.5);
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .project-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
             color: var(--text-light);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: rgba(228, 230, 234, 0.7);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .card-action {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Active card state (set by GSAP) */
+        .project-card.active-card {
+            background: #5a4bfa;
+            border-color: #7b6dfc;
+            box-shadow: 0 20px 60px rgba(90, 75, 250, 0.5);
+        }
+
+        .project-card.active-card .card-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .project-card.active-card .project-title {
+            color: #ffffff;
+        }
+
+        .project-card.active-card .card-desc {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .project-card.active-card .card-action {
+            border-top-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
         }
 
         .project-tech {
@@ -1493,8 +1592,6 @@
             font-size: 0.8rem;
             border: 1px solid var(--border-focus);
         }
-
-        
 
         /* Contact */
         .contact-section {

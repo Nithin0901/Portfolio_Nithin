@@ -383,73 +383,63 @@
 
 
     <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2 class="section-title fade-in">Featured Projects</h2>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
+    <section id="projects" class="projects-section grid-background">
+        <h2 class="section-title fade-in projects-heading">Featured Projects</h2>
+        <div class="container-fluid px-0">
+            <div class="horiz-gallery-wrapper">
+                <div class="horiz-gallery-strip">
+
+                    <!-- Card 1 -->
+                    <div class="project-wrap">
                         <a href="https://techsolution34.netlify.app/" target="_blank" class="project_link text-decoration-none">
-                    <div class="project-card">
-                          <div class="project-image">
-                            <img src="./images/project1.png" alt="Task Management App" class="img-fluid rounded">
-                        </div>
-                        <div class="project-content">
-                            <h4 class="project-title">Tech company website</h4>
-                            <p>A modern company website built with HTML, CSS, and JavaScript, styled using Bootstrap 5 for a clean layout.
-Enhanced with GSAP animations for smooth, engaging interactions.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">Bootstrap5</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag"> GSAP ANIMATIONS</span>
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="./images/project1.png" alt="Tech company website" class="img-fluid">
+                                </div>
+                                <div class="project-content">
+                                    <span class="card-subtitle">HTML · CSS · BOOTSTRAP5 · GSAP</span>
+                                    <h4 class="project-title">Tech Company Website</h4>
+                                    <p class="card-desc">A modern company website built with HTML, CSS, and JavaScript, styled using Bootstrap 5 for a clean layout. Enhanced with GSAP animations for smooth, engaging interactions.</p>
+                                </div>
+                                <div class="card-action">VIEW PROJECT →</div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
-                <a href="https://movietime34.netlify.app/" target="_blank" class="project_link text-decoration-none">
 
-                    <div class="project-card">
-                         <div class="project-image">
-                            <img src="./images/project2.png" alt="Task Management App" class="img-fluid rounded">
-                        </div>
-                        <div class="project-content">
-                            <h4 class="project-title">Movie Time</h4>
-                            <p>A responsive single-page movie search app built with React.js and Tailwind CSS, featuring real-time search with debounce optimization.
-Integrated with an external API and Appwrite backend to fetch movies and save user favorites.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">React.js</span>
-                                <span class="tech-tag">Appwrite backend</span>
-                                <span class="tech-tag">Tailwind CSS</span>
-                                <span class="tech-tag">External API (TMDB)</span>
+                    <!-- Card 2 -->
+                    <div class="project-wrap">
+                        <a href="https://movietime34.netlify.app/" target="_blank" class="project_link text-decoration-none">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="./images/project2.png" alt="Movie Time" class="img-fluid">
+                                </div>
+                                <div class="project-content">
+                                    <span class="card-subtitle">REACT.JS · TAILWIND CSS · APPWRITE · TMDB</span>
+                                    <h4 class="project-title">Movie Time</h4>
+                                    <p class="card-desc">A responsive single-page movie search app built with React.js and Tailwind CSS, featuring real-time search with debounce optimization. Integrated with TMDB API and Appwrite backend.</p>
+                                </div>
+                                <div class="card-action">VIEW PROJECT →</div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 fade-in slide-in-right">
-                                    <a href="https://task34.netlify.app/" target="_blank" class="project_link text-decoration-none">
 
-                    <div class="project-card">
-                          <div class="project-image">
-                            <img src="./images/project3.png" alt="Task Management App" class="img-fluid rounded">
-                        </div>
-                        <div class="project-content">
-                            <h4 class="project-title">Task Management App</h4>
-                            <p>The TaskManager is a modern React app for managing daily tasks with add, edit, delete, and complete functionality.
-It supports search, filters (all, active, completed), and pagination with 5 tasks per page.
-Tasks are validated with a 50-word limit and saved in localStorage for persistence.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">React.js</span>
-                                <span class="tech-tag">Tailwind css</span>
-                                <!-- <span class="tech-tag">Redux</span>
-                                <span class="tech-tag">Socket.io</span> -->
+                    <!-- Card 3 -->
+                    <div class="project-wrap">
+                        <a href="https://task34.netlify.app/" target="_blank" class="project_link text-decoration-none">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="./images/project3.png" alt="Task Management App" class="img-fluid">
+                                </div>
+                                <div class="project-content">
+                                    <span class="card-subtitle">REACT.JS · TAILWIND CSS</span>
+                                    <h4 class="project-title">Task Management App</h4>
+                                    <p class="card-desc">A modern React app for managing daily tasks with add, edit, delete, and complete functionality. Supports search, filters, and pagination with 5 tasks per page.</p>
+                                </div>
+                                <div class="card-action">VIEW PROJECT →</div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                    </a>
+
                 </div>
             </div>
         </div>
@@ -556,16 +546,13 @@ Tasks are validated with a 50-word limit and saved in localStorage for persisten
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
+<!-- GSAP CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="./script.js"></script>
 <script src="./index.js"></script>
-
-
-
-<!-- GSAP CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 
